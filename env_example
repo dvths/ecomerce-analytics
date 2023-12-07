@@ -1,0 +1,6 @@
+DB_NAME="olist"
+DB_USER=<your_user>
+DB_PASS=<your_password>
+DB_HOST=<your_host>
+
+CONNECTION_STRING="postgresql://${DB_USER}:${DB_PASS}@${DB_HOST}/${DB_NAME}"
