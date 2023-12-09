@@ -716,6 +716,36 @@ test = ["pickleshare", "pytest (<7.1)", "pytest-asyncio (<0.22)", "testpath"]
 test-extra = ["curio", "matplotlib (!=3.2.0)", "nbformat", "numpy (>=1.22)", "pandas", "pickleshare", "pytest (<7.1)", "pytest-asyncio (<0.22)", "testpath", "trio"]
 
 [[package]]
+name = "ipython-genutils"
+version = "0.2.0"
+description = "Vestigial utilities from IPython"
+optional = false
+python-versions = "*"
+files = [
+    {file = "ipython_genutils-0.2.0-py2.py3-none-any.whl", hash = "sha256:72dd37233799e619666c9f639a9da83c34013a73e8bbc79a7a6348d93c61fab8"},
+    {file = "ipython_genutils-0.2.0.tar.gz", hash = "sha256:eb2e116e75ecef9d4d228fdc66af54269afa26ab4463042e33785b887c628ba8"},
+]
+
+[[package]]
+name = "ipython-sql"
+version = "0.5.0"
+description = "RDBMS access via IPython"
+optional = false
+python-versions = "*"
+files = [
+    {file = "ipython-sql-0.5.0.tar.gz", hash = "sha256:3db3ce7f9a95dfaf43876fa80b16bdbb9a04de0ba12042cab13e9f596fcffdbe"},
+    {file = "ipython_sql-0.5.0-py3-none-any.whl", hash = "sha256:61b46ecffb956f62dbc17b5744cf70c649104c8db9afd821aa39b31f7cbb5d5b"},
+]
+
+[package.dependencies]
+ipython = "*"
+ipython-genutils = "*"
+prettytable = "*"
+six = "*"
+sqlalchemy = ">=2.0"
+sqlparse = "*"
+
+[[package]]
 name = "ipywidgets"
 version = "8.1.1"
 description = "Jupyter interactive widgets"
@@ -1555,6 +1585,23 @@ docs = ["furo (>=2023.7.26)", "proselint (>=0.13)", "sphinx (>=7.1.1)", "sphinx-
 test = ["appdirs (==1.4.4)", "covdefaults (>=2.3)", "pytest (>=7.4)", "pytest-cov (>=4.1)", "pytest-mock (>=3.11.1)"]
 
 [[package]]
+name = "prettytable"
+version = "3.9.0"
+description = "A simple Python library for easily displaying tabular data in a visually appealing ASCII table format"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "prettytable-3.9.0-py3-none-any.whl", hash = "sha256:a71292ab7769a5de274b146b276ce938786f56c31cf7cea88b6f3775d82fe8c8"},
+    {file = "prettytable-3.9.0.tar.gz", hash = "sha256:f4ed94803c23073a90620b201965e5dc0bccf1760b7a7eaf3158cab8aaffdf34"},
+]
+
+[package.dependencies]
+wcwidth = "*"
+
+[package.extras]
+tests = ["pytest", "pytest-cov", "pytest-lazy-fixture"]
+
+[[package]]
 name = "prometheus-client"
 version = "0.19.0"
 description = "Python client for the Prometheus monitoring system."
@@ -2277,6 +2324,22 @@ pymysql = ["pymysql"]
 sqlcipher = ["sqlcipher3-binary"]
 
 [[package]]
+name = "sqlparse"
+version = "0.4.4"
+description = "A non-validating SQL parser."
+optional = false
+python-versions = ">=3.5"
+files = [
+    {file = "sqlparse-0.4.4-py3-none-any.whl", hash = "sha256:5430a4fe2ac7d0f93e66f1efc6e1338a41884b7ddf2a350cedd20ccc4d9d28f3"},
+    {file = "sqlparse-0.4.4.tar.gz", hash = "sha256:d446183e84b8349fa3061f0fe7f06ca94ba65b426946ffebe6e3e8295332420c"},
+]
+
+[package.extras]
+dev = ["build", "flake8"]
+doc = ["sphinx"]
+test = ["pytest", "pytest-cov"]
+
+[[package]]
 name = "stack-data"
 version = "0.6.3"
 description = "Extract data from python stack frames and tracebacks for informative displays"
@@ -2499,4 +2562,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "e15c37bfec7c1d8e21e8e16ebb5ae5dbcdb35c49b3ea143f45530a9152c19a39"
+content-hash = "9043ca691b74db528e135f3d99d22d0794c538ac1b04ecc1ea92099d0c815e77"
