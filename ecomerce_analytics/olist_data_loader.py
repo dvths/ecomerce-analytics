@@ -1,12 +1,17 @@
 import os
+from pathlib import Path
 
 import pandas as pd
+from sqlalchemy import Engine
 
 
 class OlistDataLoader:
-    """Procedimento para carregamento dos dados e transformação dos nomes das tabelas"""
+    """
+    Procedimento para carregamento dos dados no banco de dados e
+    transformação dos nomes das tabelas
+    """
 
-    def __init__(self, datasets_path, database_engine) -> None:
+    def __init__(self, datasets_path: str | Path, database_engine: Engine) -> None:
         self.dataset_path = datasets_path
         self.database_engine = database_engine
 

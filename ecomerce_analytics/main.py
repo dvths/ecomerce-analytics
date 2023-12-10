@@ -15,18 +15,24 @@ def main():
     DATA_RAW = os.path.join(DATA_DIR, "raw")
     ZIP_FILE = "olist_data.zip"
 
-    CONNECTION_STRING = os.environ.get("CONNECTION_STRING")
-    DB = create_engine(CONNECTION_STRING)
+    try:
 
-    olist_extractor = OlistDataExtractor(
-        zip_file=ZIP_FILE, data_dir=DATA_DIR, output_path=DATA_RAW
-    )
+        CONNECTION_STRING = os.environ.get("CONNECTION_STRING")
+        DB = create_engine(CONNECTION_STRING)
 
-    olist_extractor.extract_data()
+        olist_extractor = OlistDataExtractor(
+            zip_file=ZIP_FILE, data_dir=DATA_DIR, output_path=DATA_RAW
+        )
 
-    olist_loader = OlistDataLoader(datasets_path=DATA_RAW, database_engine=DB)
+        olist_extractor.extract_data()
 
-    olist_loader.load_data()
+        olist_loader = OlistDataLoader(datasets_path=DATA_RAW, database_engine=DB)
+
+        olist_loader.load_data()
+    except KeyError:
+        print("A variável de Ambinete `CONNECTION_STRING` não está definida...")
+    except Exception as err:
+        print(f"Ocorreu um erro inesperado: {err}")
 
 
 if __name__ == "__main__":
